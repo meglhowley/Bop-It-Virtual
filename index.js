@@ -8,6 +8,8 @@ const pullItButton = document.querySelector('#pull-it')
 const spinItButton = document.querySelector('#spin-it')
 const h1 = document.querySelector('h1')
 let gameChoices = ['bop-it!', 'flick-it!', 'pull-it!', 'twist-it!', 'spin-it!']
+let gameLength = []
+let playerLength = []
 let computerChoice = 'bop-it!'
 let playerChoice = ''
 
@@ -17,23 +19,34 @@ let playerChoice = ''
 function computerChooses() {
   const randomIndex = Math.floor(Math.random() * gameChoices.length)
   computerChoice = gameChoices[randomIndex]
+  gameLength.push(computerChoice)
   h1.innerText = computerChoice
 }
 
-setInterval(computerChooses, 2000)
+function playerSelectsBopIt() {
+  playerChoice = 'bop-it!'
+  if (computerChoice === playerChoice) {
+    computerChooses()
+  }
+}
 
-// function playerSelectsBopIt() {
-//   playerChoice = 'bop-it!'
-//   if (computerChoice === playerChoice) {
-//     computerChooses()
-//   }
-// }
+function gameOver() {
+  console.log('GAME OVER!!')
+}
+
+function compareLengths() {
+  if (gameLength.length === playerLength.length) {
+    computerChooses()
+  } else {
+    gameOver()
+  }
+}
 
 // // ////////////////////////////////
 // // // Event Listeners Here
 
-// bopItButton.addEventListener('click', playerSelectsBopIt)
-// twistItButton.addEventListener('click', playerSelectsTwistIt)
-// flickItButton.addEventListener('click', playerSelectsFlickIt)
-// pullItButton.addEventListener('click', playerSelectsPullIt)
-// spinItButton.addEventListener('click', playerSelectsSpinIt)
+bopItButton.addEventListener('click', playerSelectsBopIt)
+twistItButton.addEventListener('click', playerSelectsTwistIt)
+flickItButton.addEventListener('click', playerSelectsFlickIt)
+pullItButton.addEventListener('click', playerSelectsPullIt)
+spinItButton.addEventListener('click', playerSelectsSpinIt)
