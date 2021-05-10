@@ -10,50 +10,85 @@ let gameLength = []
 let playerLength = []
 let playerChoice = ''
 let computerChoice = ''
+let timeout = ''
 
 // //////////////////////////////
 // Functions For Logic Here
 computerChooses()
 
+function timeOutSet() {
+  timeout = setTimeout(compareTime, 5000)
+}
+
+function timeoutClear() {
+  clearTimeout(timeout)
+}
+
 function computerChooses() {
+  timeOutSet()
   const randomIndex = Math.floor(Math.random() * gameChoices.length)
   computerChoice = gameChoices[randomIndex]
   gameLength.push(computerChoice)
   h1.innerText = computerChoice
-  setTimeout(compare, 3000)
 }
+
+function gameOver() {
+  console.log('Game Over!')
+  timeoutClear()
+}
+
+function compareTime() {
+  if (gameLength.length !== playerLength.length) {
+    gameOver()
+  }
+}
+
+function compareChoices() {
+  if (computerChoice !== playerChoice) {
+    gameOver()
+  } else {
+    timeoutClear()
+    computerChooses()
+  }
+}
+
+//player selections below
 
 function playerSelectsBopIt() {
   playerChoice = 'bop-it!'
   playerLength.push(playerChoice)
-  console.log(playerChoice)
-  console.log(playerLength)
-  console.log(gameLength)
-  console.log(playerLength.length)
-  console.log(gameLength.length)
-  computerChooses()
+  compareChoices()
 }
 
-function gameOver() {
-  console.log('GAME OVER!!')
+function playerSelectsTwistIt() {
+  playerChoice = 'twist-it!'
+  playerLength.push(playerChoice)
+  compareChoices()
 }
 
-function compare() {
-  if (
-    gameLength.length === playerLength.length &&
-    computerChoice === playerChoice
-  ) {
-    computerChooses()
-  } else {
-    gameOver()
-  }
+function playerSelectsFlickIt() {
+  playerChoice = 'flick-it!'
+  playerLength.push(playerChoice)
+  compareChoices()
+}
+
+function playerSelectsPullIt() {
+  playerChoice = 'pull-it!'
+  playerLength.push(playerChoice)
+  compareChoices()
+}
+
+function playerSelectsSpinIt() {
+  playerChoice = 'spin-it!'
+  playerLength.push(playerChoice)
+  compareChoices()
 }
 
 // // ////////////////////////////////
 // // // Event Listeners Here
 
 bopItButton.addEventListener('click', playerSelectsBopIt)
-// twistItButton.addEventListener('click', playerSelectsTwistIt)
-// flickItButton.addEventListener('click', playerSelectsFlickIt)
-// pullItButton.addEventListener('click', playerSelectsPullIt)
-// spinItButton.addEventListener('click', playerSelectsSpinIt)
+twistItButton.addEventListener('click', playerSelectsTwistIt)
+flickItButton.addEventListener('click', playerSelectsFlickIt)
+pullItButton.addEventListener('click', playerSelectsPullIt)
+spinItButton.addEventListener('click', playerSelectsSpinIt)
