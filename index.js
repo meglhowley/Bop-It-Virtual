@@ -17,10 +17,10 @@ computerChooses()
 
 function computerChooses() {
   const randomIndex = Math.floor(Math.random() * gameChoices.length)
-  let computerChoice = gameChoices[randomIndex]
+  computerChoice = gameChoices[randomIndex]
   gameLength.push(computerChoice)
   h1.innerText = computerChoice
-  setTimeout(compare, 6000)
+  setTimeout(compare, 3000)
 }
 
 function playerSelectsBopIt() {
@@ -31,6 +31,7 @@ function playerSelectsBopIt() {
   console.log(gameLength)
   console.log(playerLength.length)
   console.log(gameLength.length)
+  computerChooses()
 }
 
 function gameOver() {
