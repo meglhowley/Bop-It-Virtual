@@ -11,19 +11,16 @@
 </head>
 <body>
   <header>
-    <div id="score-board">High Score: 0</div>
-    <h1><button id="start-button">Start</button></h1>
-    <div id="nav-board">Back to home</div>
+    <h1 id="title">bop-it! virtual</h1>
   </header>
   
-<div class="bob-it-grid">
-<img id="bop-it" src="https://i.imgur.com/sSW3hxc.png"/>
-<img id="flick-it" src="https://i.imgur.com/xNc6v6U.png"/>
-<img id="twist-it" src="https://i.imgur.com/j3kvijV.png"/>
-<img id="console" src="https://i.imgur.com/r0HUCMK.png"/>
-<img id="spin-it" src="https://i.imgur.com/dlWrYfC.png"/>
-<img id="pull-it" src="https://i.imgur.com/sgvRy7Z.png"/>
-<script src="./index.js"></script>
+<div class="video-grid">
+<a id="traditional" href="./traditional-mode/traditional.html"><button>Traditional<br/>Mode</button></a>
+<video autoplay muted loop width="800px"> 
+<source src="audio/Bop-It-Commercial-1999.mp4" type="video/mp4">
+</video>
+<a id="memory" href="./memory-mode/memory.html"><button>Memory<br/>Mode</button></a>
 </div>
+<script src="./index.js"></script>
 </body>
 </html>
