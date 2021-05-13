@@ -2,9 +2,8 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   background: url('https://i.pinimg.com/originals/b1/06/0d/b1060d2986b02ff0902a5fd22abbdd67.jpg');
-  background-position: no-repeat;
-  background-size: 2000px;
-  height: 100vh;
+  background-size: cover;
+  height: 90vh;
   justify-content: center;
   align-content: center;
 }
@@ -17,10 +16,7 @@ header {
   align-items: center;
   text-align: center;
   font-family: 'Luckiest Guy', cursive;
-  /* height: 20vh; */
   width: 97vw;
-  /* margin-bottom: 0px; */
-  /* margin-top: -50px; */
 }
 
 #title {

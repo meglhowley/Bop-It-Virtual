@@ -192,6 +192,7 @@ button:hover {
 a {
   color: black;
   text-decoration: none;
+  z-index: 1;
 }
 
 video {
@@ -223,3 +224,14 @@ video {
 ul {
   list-style: none;
 }
+
+#gushers {
+  width: 138px;
+  height: 120px;
+  z-index: -1;
+  margin-left: -10vw;
+}
+
+/* #back2h {
+  width: 
+} */
