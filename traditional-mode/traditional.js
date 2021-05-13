@@ -26,6 +26,7 @@ const twistItCommand = new Audio('../audio/twist-it-command.mp3')
 const gameOverMain = new Audio('../audio/main-game-over-2.mp3')
 const backgroundSpeedUp1 = new Audio('../audio/background-speed-up-1.mp3')
 const transitionSound = new Audio('../audio/transition-sound.mp3')
+const backgroundSpeedUp2 = new Audio('../audio/speedup2.mp3')
 
 let gameChoices = ['bop-it!', 'flick-it!', 'pull-it!', 'twist-it!', 'spin-it!']
 let gameLength = []
@@ -61,6 +62,10 @@ const speedUp1 = () => {
   backgroundSpeedUp1.play()
 }
 
+const speedUp2 = () => {
+  backgroundSpeedUp2.play()
+}
+
 function callCommand() {
   const randomIndex = Math.floor(Math.random() * gameChoices.length)
   computerChoice = gameChoices[randomIndex]
@@ -88,11 +93,21 @@ function computerChooses() {
     backgroundAudio.pause()
     h1.innerText = 'speed up!'
     transitionSound.play()
-    setTimeout(speedUp1, 3000)
-    setTimeout(callCommand, 3000)
+    setTimeout(speedUp1, 2500)
+    setTimeout(callCommand, 2500)
   } else if (gameLength.length < 20) {
     callCommand()
     timeOutSet(1500)
+  } else if (gameLength.length === 20) {
+    console.log('speed up!')
+    backgroundSpeedUp1.pause()
+    h1.innerText = 'speed up!'
+    transitionSound.play()
+    setTimeout(speedUp2, 2500)
+    setTimeout(callCommand, 2500)
+  } else if (gameLength.length > 20) {
+    callCommand()
+    timeOutSet(1000)
   }
 }
 
@@ -145,7 +160,6 @@ function playAgain() {
   playerLength = []
   playerChoice = ''
   computerChoice = ''
-  console.log('play again')
   replayButton.setAttribute('id', 'replay-button')
   replayButton.innerText = 'play again?'
   h1.innerHTML = ''
@@ -163,6 +177,7 @@ function highscoreMessage() {
 function gameOver() {
   backgroundAudio.pause()
   backgroundSpeedUp1.pause()
+  backgroundSpeedUp2.pause()
   gameOverMain.play()
   currentScore = gameLength.length
   h1.innerHTML = `GAME. OVER. <br>score ${currentScore}`
@@ -178,15 +193,6 @@ function gameOver() {
 function compareTime() {
   if (gameLength.length !== playerLength.length) {
     gameOver()
-  }
-}
-
-function compareChoices() {
-  if (computerChoice !== playerChoice) {
-    gameOver()
-  } else {
-    timeoutClear()
-    setTimeout(computerChooses, 1000)
   }
 }
 
