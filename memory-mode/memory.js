@@ -9,7 +9,6 @@ const spinItButton = document.querySelector('#spin-it')
 const startButton = document.querySelector('#start-button')
 const replayButton = document.createElement('button')
 const h1 = document.querySelector('h1')
-h1.setAttribute('class', 'h1')
 const scoreBoard = document.querySelector('#score-board')
 const backToHomeDiv = document.querySelector('#back2h')
 const backToHomeLink = document.querySelector('#back2anchor')
@@ -26,7 +25,6 @@ let cpuArr = []
 let playerArr = []
 let playerChoice = ''
 let computerChoice = ''
-let timeout = ''
 let highScore = 0
 
 function instructions1() {
@@ -145,7 +143,7 @@ function compareChoice() {
   for (let i = 0; i < playerArr.length; i++)
     if (cpuArr[i] === playerArr[i] && playerArr.length !== cpuArr.length) {
     } else {
-      console.log('Game over!')
+      gameOver()
     }
 }
 
@@ -156,7 +154,7 @@ function compareArrays() {
     setTimeout(computerChooses, 900)
     console.log('next up!')
   } else {
-    console.log('game over!')
+    gameOver()
   }
 }
 
@@ -233,10 +231,86 @@ function addGushers() {
   backToHomeDiv.prepend(newImage)
 }
 
+function playAgain() {
+  cpuArr = []
+  playerArr = []
+  playerChoice = ''
+  computerChoice = ''
+  replayButton.setAttribute('id', 'replay-button')
+  replayButton.innerText = 'play again?'
+  h1.innerHTML = ''
+  h1.appendChild(replayButton)
+}
+
+function highscoreMessage() {
+  highScore = cpuArr.length
+  scoreBoard.innerHTML = `High Score: ${highScore}`
+  h1.innerText = `sweet! new high score: ${highScore}`
+  const highScoreAudio = new Audio('../audio/highscore.mp3')
+  highScoreAudio.play()
+}
+
+function gameOver() {
+  backgroundAudio.pause()
+  gameOverMain.play()
+  currentScore = cpuArr.length
+  h1.innerHTML = `GAME. OVER. <br>score ${currentScore}`
+  bopItButton.removeEventListener('click', playerSelectsBopIt)
+  twistItButton.removeEventListener('click', playerSelectsTwistIt)
+  flickItButton.removeEventListener('click', playerSelectsFlickIt)
+  pullItButton.removeEventListener('click', playerSelectsPullIt)
+  spinItButton.removeEventListener('click', playerSelectsSpinIt)
+  setTimeout(loserMessage, 4000)
+}
+
+function loserMessage() {
+  const lose1 = new Audio('../audio/lose1.mp3')
+  const lose2 = new Audio('../audio/lose2.mp3')
+  const lose3 = new Audio('../audio/lose3.mp3')
+  const lose4 = new Audio('../audio/lose4.mp3')
+  const lose5 = new Audio('../audio/lose5.mp3')
+  const lose6 = new Audio('../audio/lose6.mp3')
+  const loserArray = [lose1, lose2, lose3, lose4, lose5, lose6]
+  const randomIndex2 = Math.floor(Math.random() * loserArray.length)
+  const randomLoserMessage = loserArray[randomIndex2]
+  randomLoserMessage.play()
+  if (cpuArr.length > highScore && randomIndex2 === 0) {
+    setTimeout(highscoreMessage, 1300)
+    setTimeout(playAgain, 7500)
+  } else if (cpuArr.length > highScore && randomIndex2 === 1) {
+    setTimeout(highscoreMessage, 3000)
+    setTimeout(playAgain, 7500)
+  } else if (cpuArr.length > highScore && randomIndex2 === 2) {
+    setTimeout(highscoreMessage, 1000)
+    setTimeout(playAgain, 7500)
+  } else if (cpuArr.length > highScore && randomIndex2 === 3) {
+    setTimeout(highscoreMessage, 3000)
+    setTimeout(playAgain, 7500)
+  } else if (cpuArr.length > highScore && randomIndex2 === 4) {
+    setTimeout(highscoreMessage, 1000)
+    setTimeout(playAgain, 7500)
+  } else if (cpuArr.length > highScore && randomIndex2 === 5) {
+    setTimeout(highscoreMessage, 2700)
+    setTimeout(playAgain, 7500)
+  } else if (randomIndex2 === 0) {
+    setTimeout(playAgain, 1300)
+  } else if (randomIndex2 === 1) {
+    setTimeout(playAgain, 3000)
+  } else if (randomIndex2 === 2) {
+    setTimeout(playAgain, 1000)
+  } else if (randomIndex2 === 3) {
+    setTimeout(playAgain, 3000)
+  } else if (randomIndex2 === 4) {
+    setTimeout(playAgain, 1000)
+  } else if (randomIndex2 === 5) {
+    setTimeout(playAgain, 2700)
+  }
+}
+
 // // ////////////////////////////////
 // // // Event Listeners Here
 
 startButton.addEventListener('click', startGame)
-// replayButton.addEventListener('click', startGame)
+replayButton.addEventListener('click', startGame)
 
 // backToHomeLink.addEventListener('mouseover', addGushers)
