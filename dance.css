@@ -1,0 +1,121 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: linear-gradient(
+    rgb(255, 255, 255),
+    rgba(244, 127, 255, 0.705),
+    rgb(255, 255, 255)
+  );
+  height: 98vh;
+  justify-content: center;
+  align-content: center;
+}
+
+header {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 30px;
+  height: 20vh;
+  width: 100vw;
+  margin-bottom: 0px;
+  margin-top: -50px;
+}
+
+#title {
+  text-align: center;
+  font-size: 90px;
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  color: rgb(0, 0, 0);
+}
+
+.bob-it-grid {
+  display: grid;
+  margin: 0 auto;
+  grid-column-start: 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  height: 515px;
+  width: 570px;
+  margin-top: 0%;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  position: relative;
+}
+
+button {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+  padding-top: 15px;
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+button:hover {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+  padding-top: 15px;
+  background-color: rgb(244, 127, 255);
+  border-radius: 10px;
+}
+
+.back-to-home:hover {
+  color: rgb(3, 190, 181);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+}
+
+#back2h {
+  float: left;
+  margin-left: 10px;
+  margin-top: -200px;
+}
+
+#console {
+  animation: pulse 600ms linear infinite;
+  width: 700px;
+}
+
+@-webkit-keyframes "pulse" {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes "flash-background" {
+  0% {
+    background: linear-gradient(rgb(255, 255, 255), rgba(244, 127, 255, 0.705),
+      rgb(255, 255, 255);)
+  }
+  25% {
+    background: linear-gradient(rgb(255, 255, 255), aquamarine, rgb(255, 255, 255));
+  }
+  50% 
+    background: linear-gradient(rgb(255, 255, 255), rgba(244, 127, 255, 0.705),
+    rgb(255, 255, 255);)
+  }
+  75% {
+    background: linear-gradient(rgb(255, 255, 255), aquamarine, rgb(255, 255, 255));
+  }
+  100% {
+    background: linear-gradient(rgb(255, 255, 255), rgba(244, 127, 255, 0.705),
+    rgb(255, 255, 255);)
+  }
+
+  #blink{
+  animation: flash-background 500ms infinite;
+  }

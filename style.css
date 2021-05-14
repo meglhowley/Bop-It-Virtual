@@ -164,7 +164,7 @@ a {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
   right: 0;
-  background: rgb(255, 255, 255);
+  background: rgb(250, 231, 238);
   justify-items: center;
 }
 
@@ -209,8 +209,7 @@ video {
   font-size: 30px;
   width: 100%;
   margin-right: 20px;
-  -webkit-filter: drop-shadow(5px 5px 5px #bdbdbd);
-  filter: drop-shadow(5px 5px 5px #b9b9b9);
+  -webkit-filter: drop-shadow(5px 5px 5px #858585);
 }
 
 button {
