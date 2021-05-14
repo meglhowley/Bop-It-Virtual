@@ -10,6 +10,9 @@ const startButton = document.querySelector('#start-button')
 const replayButton = document.createElement('button')
 const h1 = document.querySelector('h1')
 const scoreBoard = document.querySelector('#score-board')
+const backToHomeDiv = document.querySelector('#back2h')
+const backToHomeLink = document.querySelector('#back2anchor')
+const newImage = document.createElement('img')
 
 //Audio files
 const backgroundAudio = new Audio('../audio/background-song.mp3')
@@ -263,8 +266,21 @@ function playerSelectsSpinIt() {
   }
 }
 
+function addGushers() {
+  newImage.src = 'https://i.imgur.com/cSallsF.png'
+  newImage.setAttribute('id', 'gushers')
+  backToHomeDiv.append(newImage)
+}
+
+function removeGushers() {
+  newImage.remove()
+  console.log('removed!')
+}
+
 // // ////////////////////////////////
 // // // Event Listeners Here
 
 startButton.addEventListener('click', startGame)
 replayButton.addEventListener('click', startGame)
+backToHomeLink.addEventListener('mouseover', addGushers)
+backToHomeLink.addEventListener('mouseleave', removeGushers)

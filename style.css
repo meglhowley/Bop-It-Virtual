@@ -1,52 +1,29 @@
 body {
-  display: grid;
-  grid-template-columns: 1fr;
   background: url('https://i.pinimg.com/originals/b1/06/0d/b1060d2986b02ff0902a5fd22abbdd67.jpg');
   background-size: cover;
   height: 90vh;
+  width: 100vw;
   justify-content: center;
   align-content: center;
 }
 
 header {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  justify-items: center;
-  align-items: center;
   text-align: center;
   font-family: 'Luckiest Guy', cursive;
-  width: 97vw;
+  width: 100vw;
+  height: 110px;
+  margin-top: -50px;
 }
 
 #title {
-  grid-column-start: 1;
-  grid-column-end: span 1;
   text-align: center;
-  font-size: 100px;
-  height: 5vh;
-  margin-top: 1%;
-  padding-top: 10px;
-  padding-bottom: 45px;
-  width: 57vw;
+  font-size: 90px;
+  padding-top: 25px;
+  width: 100%;
+  height: 100px;
   border: solid black;
   color: rgb(0, 0, 0);
-  background-color: rgba(244, 127, 255, 0.76);
-}
-
-.bob-it-grid {
-  display: grid;
-  margin: 0 auto;
-  grid-column-start: 1fr;
-  grid-template-columns: 2fr 1fr 2fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  height: 515px;
-  width: 570px;
-  margin-top: 0%;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  position: relative;
+  background-color: rgba(255, 218, 97, 0.863);
 }
 
 #console {
@@ -203,13 +180,13 @@ video {
 
 .video-grid {
   display: grid;
-  margin: 0 auto;
+  margin: 0px auto;
   grid-column-start: 1fr;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 1fr 2fr 1fr;
   height: 515px;
   width: 100vw;
-  margin-top: 3%;
+  margin-top: 4%;
   justify-content: center;
   align-content: center;
   justify-items: center;

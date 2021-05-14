@@ -193,6 +193,7 @@ a {
   color: black;
   text-decoration: none;
   z-index: 1;
+  position: absolute;
 }
 
 video {
@@ -226,12 +227,15 @@ ul {
 }
 
 #gushers {
-  width: 138px;
-  height: 120px;
+  position: absolute;
+  width: 120px;
+  height: 102px;
   z-index: -1;
-  margin-left: -10vw;
+  margin-left: -5vw;
+  float: left;
 }
 
-/* #back2h {
-  width: 
-} */
+#score-board {
+  float: left;
+  margin-left: -10vw;
+}
