@@ -62,6 +62,7 @@ button:hover {
   border-radius: 10px;
 }
 
+
 .back-to-home:hover {
   color: rgb(3, 190, 181);
 }
@@ -73,10 +74,16 @@ a {
   position: absolute;
 }
 
-#back2h {
+.back-to-home {
   float: left;
   margin-left: 10px;
-  margin-top: -200px;
+  margin-top: -100px;
+}
+
+#backtohome{
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 #console {

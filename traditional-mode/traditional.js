@@ -16,11 +16,6 @@ const newImage = document.createElement('img')
 
 //Audio files
 const backgroundAudio = new Audio('../audio/background-song.mp3')
-const bopItSound = new Audio('../audio/bop-it-sound.mp3')
-const flickItSound = new Audio('../audio/flick-it-sound.mp3')
-const pullItSound = new Audio('../audio/pull-it-sound.mp3')
-const spinItSound = new Audio('../audio/spin-it-sound.mp3')
-const twistItSound = new Audio('../audio/twist-it-sound.mp3')
 const bopItCommand = new Audio('../audio/bop-it-command.mp3')
 const flickItCommand = new Audio('../audio/flick-it-command.mp3')
 const pullItCommand = new Audio('../audio/pull-it-command.mp3')
@@ -88,29 +83,31 @@ function callCommand() {
 }
 
 function computerChooses() {
-  if (gameLength.length < 10) {
-    callCommand()
-    timeOutSet(2500)
-  } else if (gameLength.length === 10) {
-    console.log('speed up!')
-    backgroundAudio.pause()
-    h1.innerText = 'speed up!'
-    transitionSound.play()
-    setTimeout(speedUp1, 2500)
-    setTimeout(callCommand, 2500)
-  } else if (gameLength.length < 20) {
-    callCommand()
-    timeOutSet(1500)
-  } else if (gameLength.length === 20) {
-    console.log('speed up!')
-    backgroundSpeedUp1.pause()
-    h1.innerText = 'speed up!'
-    transitionSound.play()
-    setTimeout(speedUp2, 2500)
-    setTimeout(callCommand, 2500)
-  } else if (gameLength.length > 20) {
-    callCommand()
-    timeOutSet(1000)
+  if (gameLength.length === playerLength.length) {
+    if (gameLength.length < 10) {
+      callCommand()
+      timeOutSet(2500)
+    } else if (gameLength.length === 10) {
+      console.log('speed up!')
+      backgroundAudio.pause()
+      h1.innerText = 'speed up!'
+      transitionSound.play()
+      setTimeout(speedUp1, 2500)
+      setTimeout(callCommand, 2500)
+    } else if (gameLength.length < 20) {
+      callCommand()
+      timeOutSet(1500)
+    } else if (gameLength.length === 20) {
+      console.log('speed up!')
+      backgroundSpeedUp1.pause()
+      h1.innerText = 'speed up!'
+      transitionSound.play()
+      setTimeout(speedUp2, 2500)
+      setTimeout(callCommand, 2500)
+    } else if (gameLength.length > 20) {
+      callCommand()
+      timeOutSet(1000)
+    }
   }
 }
 
@@ -178,6 +175,11 @@ function highscoreMessage() {
 }
 
 function gameOver() {
+  bopItButton.removeEventListener('click', playerSelectsBopIt)
+  twistItButton.removeEventListener('click', playerSelectsTwistIt)
+  flickItButton.removeEventListener('click', playerSelectsFlickIt)
+  pullItButton.removeEventListener('click', playerSelectsPullIt)
+  spinItButton.removeEventListener('click', playerSelectsSpinIt)
   backgroundAudio.pause()
   backgroundSpeedUp1.pause()
   backgroundSpeedUp2.pause()
@@ -185,11 +187,6 @@ function gameOver() {
   currentScore = gameLength.length
   h1.innerHTML = `GAME. OVER. <br>score ${currentScore}`
   timeoutClear()
-  bopItButton.removeEventListener('click', playerSelectsBopIt)
-  twistItButton.removeEventListener('click', playerSelectsTwistIt)
-  flickItButton.removeEventListener('click', playerSelectsFlickIt)
-  pullItButton.removeEventListener('click', playerSelectsPullIt)
-  spinItButton.removeEventListener('click', playerSelectsSpinIt)
   setTimeout(loserMessage, 4000)
 }
 
@@ -204,10 +201,18 @@ function compareTime() {
 function playerSelectsBopIt() {
   playerChoice = 'bop-it!'
   playerLength.push(playerChoice)
-  if (computerChoice !== playerChoice) {
+  console.log(`player: ${playerLength}`)
+  console.log(`cpu: ${gameLength}`)
+  if (
+    computerChoice !== playerChoice ||
+    gameLength.length < playerLength.length
+  ) {
+    bopItButton.removeEventListener('click', playerSelectsBopIt)
     backgroundAudio.pause()
     gameOver()
   } else {
+    console.log('bop it!')
+    let bopItSound = new Audio('../audio/bop-it-sound.mp3')
     bopItSound.play()
     timeoutClear()
     setTimeout(computerChooses, 1000)
@@ -217,10 +222,18 @@ function playerSelectsBopIt() {
 function playerSelectsTwistIt() {
   playerChoice = 'twist-it!'
   playerLength.push(playerChoice)
-  if (computerChoice !== playerChoice) {
+  console.log(`player: ${playerLength}`)
+  console.log(`cpu: ${gameLength}`)
+  if (
+    computerChoice !== playerChoice ||
+    gameLength.length < playerLength.length
+  ) {
+    twistItButton.removeEventListener('click', playerSelectsTwistIt)
     backgroundAudio.pause()
     gameOver()
   } else {
+    console.log('twist it!')
+    let twistItSound = new Audio('../audio/twist-it-sound.mp3')
     twistItSound.play()
     timeoutClear()
     setTimeout(computerChooses, 1000)
@@ -230,10 +243,18 @@ function playerSelectsTwistIt() {
 function playerSelectsFlickIt() {
   playerChoice = 'flick-it!'
   playerLength.push(playerChoice)
-  if (computerChoice !== playerChoice) {
+  console.log(`player: ${playerLength}`)
+  console.log(`cpu: ${gameLength}`)
+  if (
+    computerChoice !== playerChoice ||
+    gameLength.length < playerLength.length
+  ) {
+    flickItButton.removeEventListener('click', playerSelectsFlickIt)
     backgroundAudio.pause()
     gameOver()
   } else {
+    console.log('flick it!')
+    let flickItSound = new Audio('../audio/flick-it-sound.mp3')
     flickItSound.play()
     timeoutClear()
     setTimeout(computerChooses, 1000)
@@ -243,10 +264,18 @@ function playerSelectsFlickIt() {
 function playerSelectsPullIt() {
   playerChoice = 'pull-it!'
   playerLength.push(playerChoice)
-  if (computerChoice !== playerChoice) {
+  console.log(`player: ${playerLength}`)
+  console.log(`cpu: ${gameLength}`)
+  if (
+    computerChoice !== playerChoice ||
+    gameLength.length < playerLength.length
+  ) {
+    pullItButton.removeEventListener('click', playerSelectsPullIt)
     backgroundAudio.pause()
     gameOver()
   } else {
+    console.log('pull it!')
+    let pullItSound = new Audio('../audio/pull-it-sound.mp3')
     pullItSound.play()
     timeoutClear()
     setTimeout(computerChooses, 1000)
@@ -256,10 +285,18 @@ function playerSelectsPullIt() {
 function playerSelectsSpinIt() {
   playerChoice = 'spin-it!'
   playerLength.push(playerChoice)
-  if (computerChoice !== playerChoice) {
+  console.log(`player: ${playerLength}`)
+  console.log(`cpu: ${gameLength}`)
+  if (
+    computerChoice !== playerChoice ||
+    gameLength.length < playerLength.length
+  ) {
+    spinItButton.removeEventListener('click', playerSelectsSpinIt)
     backgroundAudio.pause()
     gameOver()
   } else {
+    console.log('spin it!')
+    let spinItSound = new Audio('../audio/spin-it-sound.mp3')
     spinItSound.play()
     timeoutClear()
     setTimeout(computerChooses, 1000)
@@ -274,7 +311,6 @@ function addGushers() {
 
 function removeGushers() {
   newImage.remove()
-  console.log('removed!')
 }
 
 // // ////////////////////////////////
