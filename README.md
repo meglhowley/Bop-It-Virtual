@@ -8,14 +8,14 @@
 ***
 
 ### *About the Game*
-#### Ignite your nostalgia with this Bop-it! virtual game, modeled after the beloved 90's Hasbro toy. This Vanilla JS game offers two game play modes: a conventional *timed* mode similar to Hasbro's standard gameplay, and a memory-based game where all that matters is sequence.
+Ignite your nostalgia with this Bop-it! virtual game, modeled after the beloved 90's Hasbro toy. This Vanilla JS game offers two game play modes: a conventional *timed* mode similar to Hasbro's standard gameplay, and a memory-based game where all that matters is sequence.
 ***
 ### *Technologies Used*
 This game was built using HTML5, CSS3, and Vanilla Javascript within VS Code editor. Additional applications leveraged include GarageBand and Apple Music.
 ***
 ### *Getting Started*
 ![landing](https://i.imgur.com/CfJ4KVy.png)
-#### The main landing page is where you will select your game play mode. Once the mode is selected, you will be presented with the option to start, or display a demo of the buttons on the game console. 
+The main landing page is where you will select your game play mode. Once the mode is selected, you will be presented with the option to start, or display a demo of the buttons on the game console. 
 
 1. **Traditional Bop-it!**
    * The computer will call out (via text at the top page and sound) the command. Hover around the various levers. Bop-it! is the center, circular button, flick-it is the green button in top left, twist-it is the yellow button top-right, spin-it is red in the bottom-left, and pull-it is the blue bottom-right.
