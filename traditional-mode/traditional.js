@@ -1,5 +1,3 @@
-console.log('traditional!')
-
 // Global Variables Here
 const bopItButton = document.querySelector('#bop-it')
 const twistItButton = document.querySelector('#twist-it')
@@ -13,6 +11,8 @@ const scoreBoard = document.querySelector('#score-board')
 const backToHomeDiv = document.querySelector('#back2h')
 const backToHomeLink = document.querySelector('#back2anchor')
 const newImage = document.createElement('img')
+const demoButton = document.querySelector('#demo-button')
+let consoleButton = document.querySelector('#console')
 
 //Audio files
 const backgroundAudio = new Audio('../audio/background-song.mp3')
@@ -201,8 +201,6 @@ function compareTime() {
 function playerSelectsBopIt() {
   playerChoice = 'bop-it!'
   playerLength.push(playerChoice)
-  console.log(`player: ${playerLength}`)
-  console.log(`cpu: ${gameLength}`)
   if (
     computerChoice !== playerChoice ||
     gameLength.length < playerLength.length
@@ -211,7 +209,6 @@ function playerSelectsBopIt() {
     backgroundAudio.pause()
     gameOver()
   } else {
-    console.log('bop it!')
     let bopItSound = new Audio('../audio/bop-it-sound.mp3')
     bopItSound.play()
     timeoutClear()
@@ -222,8 +219,6 @@ function playerSelectsBopIt() {
 function playerSelectsTwistIt() {
   playerChoice = 'twist-it!'
   playerLength.push(playerChoice)
-  console.log(`player: ${playerLength}`)
-  console.log(`cpu: ${gameLength}`)
   if (
     computerChoice !== playerChoice ||
     gameLength.length < playerLength.length
@@ -232,7 +227,6 @@ function playerSelectsTwistIt() {
     backgroundAudio.pause()
     gameOver()
   } else {
-    console.log('twist it!')
     let twistItSound = new Audio('../audio/twist-it-sound.mp3')
     twistItSound.play()
     timeoutClear()
@@ -243,8 +237,6 @@ function playerSelectsTwistIt() {
 function playerSelectsFlickIt() {
   playerChoice = 'flick-it!'
   playerLength.push(playerChoice)
-  console.log(`player: ${playerLength}`)
-  console.log(`cpu: ${gameLength}`)
   if (
     computerChoice !== playerChoice ||
     gameLength.length < playerLength.length
@@ -253,7 +245,6 @@ function playerSelectsFlickIt() {
     backgroundAudio.pause()
     gameOver()
   } else {
-    console.log('flick it!')
     let flickItSound = new Audio('../audio/flick-it-sound.mp3')
     flickItSound.play()
     timeoutClear()
@@ -264,8 +255,6 @@ function playerSelectsFlickIt() {
 function playerSelectsPullIt() {
   playerChoice = 'pull-it!'
   playerLength.push(playerChoice)
-  console.log(`player: ${playerLength}`)
-  console.log(`cpu: ${gameLength}`)
   if (
     computerChoice !== playerChoice ||
     gameLength.length < playerLength.length
@@ -274,7 +263,6 @@ function playerSelectsPullIt() {
     backgroundAudio.pause()
     gameOver()
   } else {
-    console.log('pull it!')
     let pullItSound = new Audio('../audio/pull-it-sound.mp3')
     pullItSound.play()
     timeoutClear()
@@ -285,8 +273,6 @@ function playerSelectsPullIt() {
 function playerSelectsSpinIt() {
   playerChoice = 'spin-it!'
   playerLength.push(playerChoice)
-  console.log(`player: ${playerLength}`)
-  console.log(`cpu: ${gameLength}`)
   if (
     computerChoice !== playerChoice ||
     gameLength.length < playerLength.length
@@ -295,7 +281,6 @@ function playerSelectsSpinIt() {
     backgroundAudio.pause()
     gameOver()
   } else {
-    console.log('spin it!')
     let spinItSound = new Audio('../audio/spin-it-sound.mp3')
     spinItSound.play()
     timeoutClear()
@@ -313,10 +298,79 @@ function removeGushers() {
   newImage.remove()
 }
 
+function bopItDemo() {
+  consoleButton.src = 'https://i.imgur.com/irwgiMa.png'
+  bopItButton.src = 'https://i.imgur.com/sSW3hxc.png'
+  twistItButton.src = 'https://i.imgur.com/q4MN646.png'
+  flickItButton.src = 'https://i.imgur.com/XlkFCi4.png'
+  spinItButton.src = 'https://i.imgur.com/D0GDSXR.png'
+  pullItButton.src = 'https://i.imgur.com/NZ8ZWCg.png'
+}
+
+function twistItDemo() {
+  consoleButton.src = 'https://i.imgur.com/irwgiMa.png'
+  twistItButton.src = 'https://i.imgur.com/j3kvijV.png'
+  bopItButton.src = 'https://i.imgur.com/lbOmlSt.png'
+  flickItButton.src = 'https://i.imgur.com/XlkFCi4.png'
+  spinItButton.src = 'https://i.imgur.com/D0GDSXR.png'
+  pullItButton.src = 'https://i.imgur.com/NZ8ZWCg.png'
+}
+
+function spinItDemo() {
+  consoleButton.src = 'https://i.imgur.com/irwgiMa.png'
+  spinItButton.src = 'https://i.imgur.com/dlWrYfC.png'
+  bopItButton.src = 'https://i.imgur.com/lbOmlSt.png'
+  flickItButton.src = 'https://i.imgur.com/XlkFCi4.png'
+  twistItButton.src = 'https://i.imgur.com/q4MN646.png'
+  pullItButton.src = 'https://i.imgur.com/NZ8ZWCg.png'
+}
+
+function flickItDemo() {
+  consoleButton.src = 'https://i.imgur.com/irwgiMa.png'
+  flickItButton.src = 'https://i.imgur.com/xNc6v6U.png'
+  bopItButton.src = 'https://i.imgur.com/lbOmlSt.png'
+  spinItButton.src = 'https://i.imgur.com/D0GDSXR.png'
+  twistItButton.src = 'https://i.imgur.com/q4MN646.png'
+  pullItButton.src = 'https://i.imgur.com/NZ8ZWCg.png'
+}
+
+function pullItDemo() {
+  consoleButton.src = 'https://i.imgur.com/irwgiMa.png'
+  pullItButton.src = 'https://i.imgur.com/sgvRy7Z.png'
+  bopItButton.src = 'https://i.imgur.com/lbOmlSt.png'
+  spinItButton.src = 'https://i.imgur.com/D0GDSXR.png'
+  twistItButton.src = 'https://i.imgur.com/q4MN646.png'
+  flickItButton.src = 'https://i.imgur.com/XlkFCi4.png'
+}
+
+function backToColor() {
+  h1.appendChild(startButton)
+  h1.appendChild(demoButton)
+  consoleButton.src = 'https://i.imgur.com/r0HUCMK.png'
+  bopItButton.src = 'https://i.imgur.com/sSW3hxc.png'
+  twistItButton.src = 'https://i.imgur.com/j3kvijV.png'
+  flickItButton.src = 'https://i.imgur.com/xNc6v6U.png'
+  spinItButton.src = 'https://i.imgur.com/dlWrYfC.png'
+  pullItButton.src = 'https://i.imgur.com/sgvRy7Z.png'
+}
+
+function demoMode() {
+  const demoAudio = new Audio('../audio/demo.mp3')
+  demoAudio.play()
+  h1.innerHTML = ''
+  setTimeout(bopItDemo, 500)
+  setTimeout(twistItDemo, 2000)
+  setTimeout(spinItDemo, 3000)
+  setTimeout(flickItDemo, 4000)
+  setTimeout(pullItDemo, 5500)
+  setTimeout(backToColor, 7000)
+}
+
 // // ////////////////////////////////
 // // // Event Listeners Here
 
 startButton.addEventListener('click', startGame)
+demoButton.addEventListener('click', demoMode)
 replayButton.addEventListener('click', startGame)
 backToHomeLink.addEventListener('mouseover', addGushers)
 backToHomeLink.addEventListener('mouseleave', removeGushers)
