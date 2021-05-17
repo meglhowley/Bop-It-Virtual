@@ -94,6 +94,7 @@ function computerChooses() {
       transitionSound.play()
       setTimeout(speedUp1, 2500)
       setTimeout(callCommand, 2500)
+      timeOutSet(4000)
     } else if (gameLength.length < 20) {
       callCommand()
       timeOutSet(1500)
@@ -104,6 +105,7 @@ function computerChooses() {
       transitionSound.play()
       setTimeout(speedUp2, 2500)
       setTimeout(callCommand, 2500)
+      timeOutSet(3500)
     } else if (gameLength.length > 20) {
       callCommand()
       timeOutSet(1000)

@@ -250,7 +250,7 @@ function gameOver() {
   backgroundAudio.pause()
   gameOverMain.play()
   currentScore = cpuArr.length
-  h1.innerHTML = `GAME. OVER. <br>score ${currentScore}`
+  h1.innerHTML = `GAME. OVER. score ${currentScore}`
   bopItButton.removeEventListener('click', playerSelectsBopIt)
   twistItButton.removeEventListener('click', playerSelectsTwistIt)
   flickItButton.removeEventListener('click', playerSelectsFlickIt)
