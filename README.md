@@ -2,9 +2,9 @@
 ![image](https://blog.leapmotion.com/wp-content/uploads/2014/02/labs-bopit.jpg)
 ***
 ## Created by: Meg Howley
-### Date: 5/17/2021
-***
 #### [LinkedIn](https://www.linkedin.com/in/megan-l-howley-4b568199/) | [GitHub](https://github.com/meglhowley) | [Trello Board](https://trello.com/b/1BXSBv5d/bop-it-virtual)
+***
+#### Date: 5/17/2021
 ***
 
 ### *About the Game*
