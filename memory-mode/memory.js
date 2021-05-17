@@ -133,7 +133,7 @@ function delayLoop(time) {
 
 function displayCommands() {
   cpuArr.forEach((command) => {})
-  delayLoop(500)
+  delayLoop(700)
 }
 
 const computerChooses = () => {
