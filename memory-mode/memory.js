@@ -94,6 +94,14 @@ function playPullItCommand() {
   pullItCommand.play()
 }
 
+function addPlayerClick() {
+  bopItButton.addEventListener('click', playerSelectsBopIt)
+  twistItButton.addEventListener('click', playerSelectsTwistIt)
+  flickItButton.addEventListener('click', playerSelectsFlickIt)
+  pullItButton.addEventListener('click', playerSelectsPullIt)
+  spinItButton.addEventListener('click', playerSelectsSpinIt)
+}
+
 function delayLoop(time) {
   for (let i = 0; i < cpuArr.length; i++) {
     setTimeout(function () {

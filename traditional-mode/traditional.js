@@ -36,7 +36,6 @@ let highScore = 0
 
 // //////////////////////////////
 // Functions For Logic Here
-// computerChooses()
 
 function timeOutSet(time) {
   timeout = setTimeout(compareTime, time)
