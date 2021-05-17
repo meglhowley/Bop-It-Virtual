@@ -87,7 +87,6 @@ function computerChooses() {
       callCommand()
       timeOutSet(2500)
     } else if (gameLength.length === 10) {
-      console.log('speed up!')
       backgroundAudio.pause()
       h1.innerText = 'speed up!'
       transitionSound.play()
@@ -98,7 +97,6 @@ function computerChooses() {
       callCommand()
       timeOutSet(1500)
     } else if (gameLength.length === 20) {
-      console.log('speed up!')
       backgroundSpeedUp1.pause()
       h1.innerText = 'speed up!'
       transitionSound.play()

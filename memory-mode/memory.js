@@ -1,5 +1,3 @@
-console.log('memory!')
-
 // Global Variables Here
 const bopItButton = document.querySelector('#bop-it')
 const twistItButton = document.querySelector('#twist-it')
@@ -140,7 +138,6 @@ const computerChooses = () => {
   const randomIndex = Math.floor(Math.random() * gameChoices.length)
   computerChoice = gameChoices[randomIndex]
   cpuArr.push(computerChoice)
-  console.log(`cpu: ${cpuArr}`)
   displayCommands()
   playerArr = []
   bopItButton.addEventListener('click', playerSelectsBopIt)
@@ -160,10 +157,7 @@ function compareChoice() {
 
 function compareArrays() {
   if (playerArr[playerArr.length - 1] === cpuArr[playerArr.length - 1]) {
-    console.log(`cpu: ${cpuArr}`)
-    console.log(`player: ${playerArr}`)
     setTimeout(computerChooses, 900)
-    console.log('next up!')
   } else {
     gameOver()
   }
@@ -319,7 +313,6 @@ function addGushers() {
 
 function removeGushers() {
   newImage.remove()
-  console.log('removed!')
 }
 
 function bopItDemo() {
