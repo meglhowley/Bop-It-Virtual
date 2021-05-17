@@ -185,7 +185,7 @@ function gameOver() {
   backgroundSpeedUp2.pause()
   gameOverMain.play()
   currentScore = gameLength.length
-  h1.innerHTML = `GAME. OVER. <br>score ${currentScore}`
+  h1.innerHTML = `GAME. OVER. score ${currentScore}`
   timeoutClear()
   setTimeout(loserMessage, 4000)
 }
