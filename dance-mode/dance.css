@@ -51,6 +51,7 @@ button {
   padding-top: 15px;
   background-color: aquamarine;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -60,6 +61,7 @@ button:hover {
   padding-top: 15px;
   background-color: rgb(244, 127, 255);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 
@@ -126,3 +128,8 @@ a {
   #blink{
   animation: flash-background 500ms infinite;
   }
+
+  .console-button{
+    cursor: pointer;
+  }
+  
